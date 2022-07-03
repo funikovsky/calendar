@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { HoursBloc } from '../HoursBlock';
 import { DivStyled } from '../styled/DivStyled';
@@ -14,9 +13,7 @@ const EventBlockStyled = styled.div`
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
   }
 `;
-export const EventBlock = ({ selectedDiv, setSelectedDiv }) => {
-  const [activeDiv, setActiveDiv] = useState([]);
-
+export const EventBlock = ({ selectedDiv, setSelectedDiv, activeDiv, setActiveDiv }) => {
   const handleClick = (index) => {
     if (!activeDiv.includes(index)) {
       setActiveDiv((prev) => [...prev, index]);

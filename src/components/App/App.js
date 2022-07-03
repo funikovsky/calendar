@@ -8,13 +8,25 @@ import { AppWraper } from './AppWrapper';
 
 function App() {
   const [selectedDiv, setSelectedDiv] = useState();
+  const [activeDiv, setActiveDiv] = useState([]);
+
+  const handleClickDel = (index) => {
+    const arr = activeDiv.filter((item) => item !== index);
+    setActiveDiv(arr);
+    setSelectedDiv(null);
+  };
   return (
     <AppWraper>
       <Container>
         <Header />
         <ChoiceDateBlock />
-        <EventBlock selectedDiv={selectedDiv} setSelectedDiv={setSelectedDiv} />
-        <Futer selectedDiv={selectedDiv} />
+        <EventBlock
+          selectedDiv={selectedDiv}
+          setSelectedDiv={setSelectedDiv}
+          activeDiv={activeDiv}
+          setActiveDiv={setActiveDiv}
+        />
+        <Futer selectedDiv={selectedDiv} handleClickDel={handleClickDel} />
       </Container>
     </AppWraper>
   );
