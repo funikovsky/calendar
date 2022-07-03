@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { HoursBloc } from '../HoursBlock';
 import { DivStyled } from '../styled/DivStyled';
 
 const EventBlockStyled = styled.div`
@@ -9,7 +10,8 @@ const EventBlockStyled = styled.div`
   grid-template-rows: repeat(7, 80px);
 
   & > div {
-    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-right: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
   }
 `;
 export const EventBlock = ({ selectedDiv, setSelectedDiv }) => {
@@ -28,7 +30,7 @@ export const EventBlock = ({ selectedDiv, setSelectedDiv }) => {
   };
   return (
     <DivStyled>
-      <div></div>
+      <HoursBloc />
       <EventBlockStyled>
         {[...new Array(49)].map((_, index) => (
           <DivStyled
