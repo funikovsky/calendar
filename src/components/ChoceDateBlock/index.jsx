@@ -7,9 +7,9 @@ import { CenterBlock } from '../styled/CenterBlock';
 const ChoiceDateBlockStyled = styled.div`
   min-height: 166px;
   background-color: #dbd9d9;
-  border-bottom: 2px solid #afaeae;
+  border-bottom: 1px solid #afaeae;
   border-top: 2px solid #afaeae;
-  padding: 20px 50px;
+  padding: 3% 3% 3% 12%;
 `;
 
 export const ChoiceDateBlock = () => {
